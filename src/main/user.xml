@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.project.User">
+            <property name="username" value="newUser"></property>
+            <property name="password" value="NewPassword"></property>
+    </bean>
+
+    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/test"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="Admin@123"></property>
+    </bean>
+
+    <bean id="dao" class="com.project.DBConnect">
+        <property name="dataSource" ref="ds"></property>
+    </bean>
+
+
+
+</beans>
